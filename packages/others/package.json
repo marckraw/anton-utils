@@ -1,0 +1,47 @@
+{
+  "name": "@mrck-labs/others",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {},
+  "type": "module",
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint \"./src/**/*.ts*\" --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:ef-global/backpack-boilerplate-packages.git"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "./dist/*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "devDependencies": {
+    "tsup": "^7.2.0"
+  }
+}
